@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body><script src="../js/pixi.min.js"></script>
+	      <script>
+			  var app=new PIXI.Application(474,1025);
+			  document.body.appendChild(app.view);
+			  var keai=new PIXI.Sprite.fromImage("../imgs/OIP-C (2).jpg");
+			  app.stage.addChild(keai);
+			  var plane=new PIXI.Sprite.fromImage("../imgs/liaoji2.png");
+			  app.stage.addChild(plane);
+			  plane.x=200;
+			  plane.y=800;
+			  plane.interactive=true;
+			  function planemove(){
+				  plane.y-=2;
+			  }
+			  plane.on("pointermove",planemove);
+			  var plane1=new PIXI.Sprite.fromImage("../imgs/enemy_03.png");
+			  app.stage.addChild(plane1)
+			  plane1.x=170;
+			  plane1.y=500;
+			  var zuo=new PIXI.Sprite.fromImage("../imgs/zuo.png");
+			  app.stage.addChild(zuo);
+			  zuo.x=20;
+			  zuo.y=900;
+			  zuo.scale.x=2;
+			  zuo.scale.y=2;
+			  var you=new PIXI.Sprite.fromImage("../imgs/you.png");
+			  app.stage.addChild(you);
+			  you.x=340;
+			  you.y=900;
+			  you.scale.x=2;
+			  you.scale.y=2;
+			  zuo.interactive=true;
+			  you.interactive=true;
+			  function zuo1(){
+				  plane.x-=3;
+			  }
+			  zuo.on("pointertap",zuo1);
+			  function you1(){
+				  plane.x+=2;
+			  }
+			  you.on("pointertap",you1);
+			  var plane2=new PIXI.Sprite.fromImage("../imgs/enemy_01.png");
+			  app.stage.addChild(plane2)
+			  plane2.x=355;
+			  plane2.y=600;
+			  var plane3=new PIXI.Sprite.fromImage("../imgs/enemy_04.png");
+			  app.stage.addChild(plane3)
+			  plane3.x=50;
+			  plane3.y=300;
+			  var plane4=new PIXI.Sprite.fromImage("../imgs/enemy_03.png");
+			  app.stage.addChild(plane4)
+			  plane4.x=250;
+			  plane4.y=200;
+		
+	</script>
+	</body>
+</html>
